@@ -1,0 +1,36 @@
+.helloInput {
+  width: 200px;
+}
+
+.title{
+  color: white;
+  display: inline-block;
+  
+  
+}
+.mainText{
+  color:white;
+}
+
+#centre{
+  text-align: center;
+}
+#testLogin{
+  padding:0px 23px; 
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #009688;
+
+}
+
+.page-footer{
+  background-color: #009688;
+  
+}
+main {
+  flex: 1 0 auto;
+}
+    

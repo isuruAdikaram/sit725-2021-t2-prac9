@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Smart Kitchen App</title>
+
+    <!-- Compiled and minified CSS -->
+    <!-- Materialze-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Materialize icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+
+
+        <div class="container" id="centre">
+            <h1 class="title ">Smart Kitchen</h1>
+            <div class="row">
+
+            </div>
+            <div class="row center" style="height:300px; width: auto;">
+                <img src="assets/smart-container.jpg" alt="smart container"
+                    style="height: 100%;padding-top: 5px; padding-left: 15px;"> <!-- notice the "circle" class -->
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col s6 offset-s3">
+                        <div class="card card-login">
+                            <div class="card-content">
+                                <span class="card-title">Log In</span>
+                                <form>
+                                    <div class="input-field">
+                                        <input type="text" id="username" class="validate" kl_vkbd_parsed="true">
+                                        <label for="username">Username</label>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="text" id="password" class="password" kl_vkbd_parsed="true">
+                                        <label for="password">password</label>
+                                    </div>
+                                    <a href="#!">Forgot Password?</a>
+                                    <br>
+                                    <br>
+                                    <div>
+                                        <input type="submit" class="btn right" value="Log In" kl_vkbd_parsed="true">
+                                        <a href="index.html" class="btn-flat">Back</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container">
+                © 2021 Copyright SmartKitchenOrg
+                <!-- <a class="grey-text text-lighten-4 right" href="https://github.com/alexbonti/node-material"><img
+                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>Boiler plate here !</a> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- socket IO Served by the server -->
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script src="js/env.js"></script>
+
+</body>
+
+</html>
