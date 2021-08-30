@@ -1,0 +1,11 @@
+Using basic Mocha specs
+
+assert:    The word 'assert' aids in determining the test status. It determines whether or not the test was successful.
+
+describe: 'describe' is a function that holds a collection of tests,or a test suite as we might call it. 
+           It has two parameters: the first is a descriptive name that describes the method's usefulness,
+           The second is a function: which basically comprises one or more tests. It's also possible to specify a nested 'describe'.
+
+it:       It's a function that contains the actual test or test steps that must be run.It also has two parameters:
+          The first is the test's meaningful name,
+          and the second is the function, which contains the test's body or stages.
