@@ -18,6 +18,13 @@ describe("Test get post api",function(){
             done()
         });
     });
+    it("return result as an object",function(done){
+        request(url,function(error,response,body){
+            body = JSON.parse(body)
+            expect(body).to.be.a('Object');
+            done()
+        });
+    });
 
 
 });
