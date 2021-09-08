@@ -13,6 +13,16 @@ const itemsList =[
   }
 ]
 
+// For socket
+let socket = io();
+
+socket.on('datetime',(msg)=>{
+    console.log('Date and Time' + msg)
+    var para = document.createElement('P')
+    para.setAttribute('class','date-time')
+    document.querySelector('p.date-time').innerHTML =msg
+})
+
 const testButtonFunction=()=>{
   alert('Thank you for clicking, sign up button is not yet active!')
 }

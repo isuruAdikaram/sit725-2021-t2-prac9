@@ -40,8 +40,7 @@ app.use((req,res,next)=>{
   next()
 })
 
-let http = require('http').createServer(app);
-let io = require('socket.io')(http);
+
 
 
 var port = process.env.PORT || 3000;
@@ -52,6 +51,10 @@ app.use('/',indexRoute)
 app.use((req,res,next)=>{
   res.status(404).sendFile(path.join(__dirname,'public','404.html'))
 })
+
+let http = require('http').createServer(app);
+let io = require('socket.io')(http);
+
 // socket test
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -59,7 +62,8 @@ io.on('connection', (socket) => {
     console.log('user disconnected');
   });
   setInterval(()=>{
-    socket.emit('number', parseInt(Math.random()*10));
+    let date = new Date()
+    socket.emit('datetime', date );
   }, 1000);
 
 });
