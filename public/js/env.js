@@ -17,9 +17,6 @@ const itemsList =[
 let socket = io();
 
 socket.on('datetime',(msg)=>{
-    console.log('Date and Time' + msg)
-    var para = document.createElement('P')
-    para.setAttribute('class','date-time')
     document.querySelector('p.date-time').innerHTML =msg
 })
 
