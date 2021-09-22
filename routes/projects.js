@@ -14,4 +14,8 @@ router.post('/api/projects', (req, res) => {
 
 })
 
+router.get('/users/login',(req,res)=>{
+    res.render('login',{title:"Login"})
+})
+
 module.exports = router
