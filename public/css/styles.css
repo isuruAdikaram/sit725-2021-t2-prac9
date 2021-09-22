@@ -32,4 +32,10 @@ body {
 }
 main {
   flex: 1 0 auto;
-} 
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+  background-color: #009688 !important;
+}
