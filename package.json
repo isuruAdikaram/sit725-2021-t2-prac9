@@ -17,6 +17,7 @@
     "http-proxy": "^1.8.1",
     "mocha": "^9.1.1",
     "mongodb": "^4.1.0",
+    "mongoose": "^6.0.7",
     "request": "^2.88.2",
     "socket.io": "^2.3.0"
   },
