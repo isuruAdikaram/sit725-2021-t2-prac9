@@ -14,10 +14,7 @@ router.get('/users', ensureAuthenticated, (req, res) => {
 
 router.post('/users', ensureAuthenticated, (req, res) => {
   // console.log("New Project added", req.body)
-  let newProject = req.body;
-  console.log("I'm here")
-  console.log(req.user)
-  Controllers.projectController.createProjects(newProject, res)
+  Controllers.projectController.createProjects(req, res)
 
 })
 
