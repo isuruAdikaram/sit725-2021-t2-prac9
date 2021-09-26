@@ -55,7 +55,7 @@ app.use((req,res,next)=>{
 var port = process.env.PORT || 3000;
 
 // code is roted to roter>project.js
-app.use('/',indexRoute)
+app.use('/users',indexRoute)
 
 app.use((req,res,next)=>{
   res.status(404).sendFile(path.join(__dirname,'public','404.html'))
