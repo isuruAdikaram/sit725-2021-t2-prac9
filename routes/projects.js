@@ -7,43 +7,29 @@ const router = express.Router()
 const Controllers = require('../controllers')
 const passport = require('passport')
 
-router.get('/users', ensureAuthenticated, (req, res) => {
+router.get('/', ensureAuthenticated, (req, res) => {
   Controllers.projectController.getProjects(req,res)
 
 })
 
-router.post('/users', ensureAuthenticated, (req, res) => {
+router.post('/', ensureAuthenticated, (req, res) => {
   // console.log("New Project added", req.body)
   Controllers.projectController.createProjects(req, res)
 
 })
 
-// router.get('/', ensureAuthenticated, (req, res) => {
-//   var userId = req.user._id;
-//   Pet.findOne({ _id: userId })
-//     .then(result => {
-//       // Check if push subscription object is undefined (push is not registered)
-//       if (!result) {
-//         res.render('index', { title: "Dashboard", msg: "User does not exist" });
-//       }
-//       else {
-//         res.render('index', { title: "Dashboard", data: result })
-//       }
-//     });
-
-// })
 // User logout
-router.get('/users/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   req.logout()
   req.flash('success_msg', 'You are logged out')
   res.redirect('/users/login')
 })
 // Login route
-router.get('/users/login', (req, res, next) => {
+router.get('/login', (req, res, next) => {
   res.render('login', { title: "Login" })
 })
 // Login route
-router.post('/users/login', (req, res, next) => {
+router.post('/login', (req, res, next) => {
   console.log(req.body)
   passport.authenticate('local', function (err, user, info) {
     console.log(info)
@@ -65,11 +51,11 @@ router.post('/users/login', (req, res, next) => {
 })
 
 // Register route
-router.get('/users/register', (req, res) => {
+router.get('/register', (req, res) => {
   res.render('register', { title: "register" })
 })
 // Register router
-router.post('/users/register', (req, res) => {
+router.post('/register', (req, res) => {
   const { firstName, lastName, email, password, password2 } = req.body;
   console.log(req.body)
   let errors = [];
@@ -132,7 +118,7 @@ router.post('/users/register', (req, res) => {
               newUser.save()
                 .then(user => {
                   req.flash('success_msg', 'You are now registered and can log in')
-                  res.redirect('/users/login')
+                  res.redirect('/login')
                 })
                 .catch(err => console.log(err))
             })
@@ -142,7 +128,7 @@ router.post('/users/register', (req, res) => {
   }
 })
 // Pet delete router
-router.delete('/users/delete', (req, res) => {
+router.delete('/delete', (req, res) => {
   const { id } = req.body;
   console.log(id)
   Pet.deleteOne({ _id: id })
@@ -155,7 +141,7 @@ router.delete('/users/delete', (req, res) => {
     })
     .catch(err => console.log(err));
 })
-router.put('/users/upload', (req, res) => {
+router.put('/upload', (req, res) => {
   console.log(req.body)
   const { id, title, image, link, description } = req.body
 
@@ -166,6 +152,46 @@ router.put('/users/upload', (req, res) => {
       } else {
         res.json({ statusCode: 400, msg: "Unable to find record" })
       }
+    })
+    .catch(err => console.log(err))
+})
+// Get user account 
+router.get('/account',ensureAuthenticated,(req,res)=>{
+  User.findOne({_id:req.user._id})
+    .then(user=>{
+      if(user){
+        let firstName = user.firstName
+        let lastName = user.lastName
+        let email = user.email
+        console.log(typeof firstName)
+        res.render('account',{
+          title:"User account",
+          firstName,
+          lastName,
+          email
+        })
+      }
+    })
+    .catch(err=>{console.log(err)})
+})
+// Update user account
+router.put('/account',ensureAuthenticated, (req, res) => {
+  const {firstName,lastName,email} = req.body;
+  const id = req.user._id;
+
+  User.findByIdAndUpdate({ _id: id }, { $set: { firstName, lastName, email} })
+    .then(result => {
+        let firstName = result.firstName
+        let lastName = result.lastName
+        let email = result.email
+      
+        req.flash('success_msg', 'New user saved successfully')
+        res.json({
+          statusCode:200,
+          success_msg:"User udated"
+        })
+      
+        
     })
     .catch(err => console.log(err))
 })
