@@ -1,12 +1,14 @@
 require('dotenv').config()
 const express = require("express");
 const indexRoute =require('./routes/projects')
-const dbConnection = require('./dbConnect')
+const mongo = require('./dbConnect')
+const createColllection = require('./dbConnect')
 const cors = require("cors")
 const path = require('path')
 const expressLayouts = require('express-ejs-layouts')
 const flash = require('connect-flash')
 const session = require('express-session')
+const passport = require('passport')
 
 
 const app = express();
@@ -19,6 +21,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors())
 
+// Passport Config
+require('./config/passport')(passport)
+
 // EJS
 app.use(expressLayouts)
 app.set('view engine','ejs')
@@ -28,6 +33,10 @@ app.use(session({
   resave:true,
   saveUninitialized:true
 }))
+
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Connect flash
 app.use(flash())
@@ -68,11 +77,12 @@ io.on('connection', (socket) => {
 
 });
 
+mongo();
 
 http.listen(port,()=>{
   console.log("Listening on port ", port);
   // createColllection("pets")
-  dbConnection.createColllection("pets")
+   createColllection("pets")
 });
 
 //this is only needed for Cloud foundry 
