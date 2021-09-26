@@ -1,0 +1,81 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-3 viewport">
+
+        </div>
+        <div class="col-6 viewport section">
+            <!-- <div class="row"> -->
+            <div class="card card-body form-round">
+                <h5 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i> Register</h4>
+                    <div id="alert_placeholder"></div>
+                        <div class="form">
+                            <form class="form-control" >
+                                <div class="input-field">
+                                    <input type="text" id="firstName" name="firstName"
+                                        value="<%= typeof firstName != 'undefined' ? firstName: ''%>"
+                                        kl_vkbd_parsed="true">
+                                    <label for="firstName">First Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="lastName" name="lastName"
+                                        value="<%= typeof lastName != 'undefined' ? lastName: ''%>"
+                                        kl_vkbd_parsed="true">
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" id="email" name="email"
+                                        value="<%= typeof email != 'undefined' ? email: ''%>" kl_vkbd_parsed="true">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div>
+                                    <button type="submit" id="update-btn" class="btn left"
+                                        kl_vkbd_parsed="true">Update</button>
+                                </div>
+                                <br>
+                                <br>
+                            </form>
+                        </div>
+            </div>
+
+            <!-- </div> -->
+        </div>
+        <div class="col-3 viewport">
+
+        </div>
+    </div>
+</div>
+<script>
+    const updateAccount = () => {
+        const firstName = $("#firstName").val();
+        const lastName = $("#lastName").val();
+        const email = $("#email").val();
+
+        const updateData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email
+        }
+        $.ajax({
+            url: "/users/account",
+            data: updateData,
+            type: "PUT",
+            success: result => {
+                console.log(result)
+                if (typeof result.success_msg != 'undefined') {
+                        
+                            $('#alert_placeholder').append().html('<div class="alert alert-success alert-dismissible fade show" role="alert">' + result.success_msg +
+                                '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>' + '</div>')
+                                               
+                    }
+            }
+        })
+    }
+
+    $(document).ready(() => {
+        // Exicute updateAccount function  
+        $("#update-btn").click((event) => {
+            event.preventDefault();
+            updateAccount();
+        })
+    })
+</script>
