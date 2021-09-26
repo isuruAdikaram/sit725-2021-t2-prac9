@@ -1,0 +1,88 @@
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 viewport">
+
+            </div>
+            <div class="col-6 viewport section">
+                <!-- <div class="row"> -->
+                    <div class="card card-body form-round">
+                        <h5 class="text-center mb-3"><i class="fas fa-sign-in-alt"></i> Register</h4>
+                            <%- include('./partials/messages') %>
+                        <div class="form">
+                            <form class="form-control" action="/users/register" method ="POST">
+                                <div class="input-field">
+                                    <input type="text" id="firstName" name = "firstName" value="<% typeof firstName != 'undefined' ? firstName: ''%>" kl_vkbd_parsed="true">
+                                    <label for="firstName">First Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="lastName" name ="lastName" value="<% typeof lastName != 'undefined' ? lastName: ''%>" kl_vkbd_parsed="true">
+                                    <label for="lastName">Last Name</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="email" id="email" name ="email"value="<% typeof email != 'undefined' ? email: ''%>" kl_vkbd_parsed="true">
+                                    <label for="email">Email</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="password" name ="password" class="password" value="<% typeof password != 'undefined' ? password: ''%>" kl_vkbd_parsed="true">
+                                    <label for="password">password</label>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="password2" name ="password2"  class="password" value="<% typeof password2 != 'undefined' ? password2: ''%>" kl_vkbd_parsed="true">
+                                    <label for="password2">Confirm password</label>
+                                </div>
+                                <div>
+                                    <button type="submit" id="register-btn" class="btn left" 
+                                        kl_vkbd_parsed="true">Submit</button>
+                                </div>
+                                <br>
+                                <br>
+                            </form>
+                        </div>
+                    </div>
+                
+                <!-- </div> -->
+            </div>
+            <div class="col-3 viewport">
+
+            </div>
+        </div>
+    </div>
+</body>
+<!-- <script>
+    $(document).ready(() => {
+
+    });
+
+    $('#register-btn').click((event) => {
+        event.preventDefault();
+        register();
+    });
+    let register = () => {
+        let firstName = $('#firstName').val();
+        let lastName = $('#lastName').val();
+        let email = $('#email').val();
+        let password = $('#password').val();
+        let password2 = $('#password').val();
+
+        let userData = {};
+
+        userData.firstName = firstName;
+        userData.lastName = lastName;
+        userData.email = email;
+        userData.password = password;
+        userData.password2 = password2;
+
+        $.ajax({
+            url: "/users/register",
+            data: userData,
+            type: "POST",
+            success: (result) => {
+                console.log(result)
+            }
+        })
+    }
+
+
+</script> -->
+
