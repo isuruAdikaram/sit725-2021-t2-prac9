@@ -45,3 +45,24 @@ nav .nav-wrapper {
   /* value of your choice which suits your alignment */
   min-height: 100vh;
 }
+.viewport{
+  height: 80vh;
+}
+.section{
+  display: grid;
+  /* justify-content: center; */
+  align-content: center;
+}
+.col-6.viewport.section{
+  padding: inherit;
+}
+
+@media (min-width: 576px) {
+  .container{
+      max-width:100% !important;
+      padding-left:0px;
+      padding-right:0px;
+
+  }
+  
+}
