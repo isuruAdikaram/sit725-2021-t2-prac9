@@ -40,11 +40,10 @@ const insertProjects = (req, res) => {
 // get projects from the database
 const getAllProjects = (req,res) => {  
     var userId = req.user._id
-    console.log(userId)
+
     Pet.find({userID:userId})
         .then(result => {                      
             if (result) {                
-                console.log(result)
                 res.json({ statusCode: 200, data: result })
             } else {
                 res.json({ statusCode: 400, message: err })
