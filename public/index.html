@@ -18,53 +18,38 @@
 </head>
 
 <body>
-  <header></header>
+  <header>
 
+  </header>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">Image safe</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="users/account">User Account</a></li>
+        <li><a href="badges.html">Components</a></li>
+        <li><a href="users/logout">Log Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  <ul class="sidenav" id="mobile-demo">
+    <li><a href="sass.html">Sass</a></li>
+    <li><a href="badges.html">Components</a></li>
+    <li><a href="users/logout">Log Out</a></li>
+  </ul>
   <main>
-    <div class="container" id="centre">
-      <h1 class="title" id="title">Image Safe</h1>
-      
-        <p class="date-time"></p>
-      
-      <p class="date-time"></p>
+    <div class="container" id="centre">     
+        
       <div class="row"></div>
-      <div class="row center" style="height:300px; width: auto;">
-        <img src="/assets/cat-2.jpg" alt="smart container"
-          style="height: 100%;padding-top: 5px; padding-left: 15px;" />
-        <!-- notice the "circle" class -->
+      <!-- <div class="row center" style="height:300px; width: auto;"> -->
+        <button class="waves-effect waves-light btn modal-trigger" href="#modal1"><i>
+        </i class="material-icons "></i>Add Images!</button>
       </div>
-      <a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i
-          class="material-icons left">create</i>click me!</a>
+      
       <!--click me button modal-->
       <div class="row" id="card-section">
-        <div class="col s4">
-          <div class="card medium">
-            <!-- biggining of the card -->
-            <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="assets/cat.jpg">
-            </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Hunter-cat<i
-                  class="material-icons right">more_vert</i></span>
-              <p><a href="#">about</a></p>
-            </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Hunter-cat<i
-                  class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div> <!-- end of the card -->
-        </div><!-- class="col s4 "-->
+        
       </div><!-- id="card-section"-->
-      <div class="container">
-        <div class="row center" style="padding-top:50px;">
-          <a id="testSignup" href="#!" onclick="testButtonFunction()" class="waves-effect waves-light btn">Sign up!</a>
-        </div>
-        <div class="row center" style="padding-top:50px;">
-          <a id="testLogin" href="signup.html" class="waves-effect waves-light btn">Login!</a>
-        </div>
-      </div>
-    </div>
     <!-- modal structure -->
     <div id="modal1" class="modal">
       <div class="modal-content">
@@ -75,11 +60,11 @@
           <form class="col s12">
             <div class="row">
               <div class="input-field col s6">
-                <input id="title" type="text" class="validate">
+                <input id="titlePet" name="title" type="text" class="validate">
                 <label for="title">Title</label>
               </div>
               <div class="input-field col s6">
-                <input id="image" type="text" class="validate">
+                <input id="image" name ="image"type="text" class="validate">
                 <label for="image">Image</label>
               </div>
             </div>
@@ -91,7 +76,7 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="description" type="text" class="validate">
+                <input id="description" name ="description" type="text" class="validate">
                 <label for="description">Description</label>
               </div>
             </div>
@@ -111,11 +96,10 @@
   </main>
   <footer class="page-footer">
     <div class="footer-copyright">
-      <div class="container">
-        © 2021 Copyright SmartKitchenOrg
-        <!-- <a class="grey-text text-lighten-4 right" href="https://github.com/alexbonti/node-material"><img
-                        src="assets/git-logo.svg" style="height: 20px; padding-right: 15px;"></i>Boiler plate here !</a> -->
+      <div class="container left">
+        © 2021 Copyright ImageSafeOrg
       </div>
+      <div class="right block"><p class="date-time"></p></div>
     </div>
   </footer>
 
@@ -131,6 +115,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
   <script src="js/env.js"></script>
+
+  <script>  
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  </script>
 </body>
 
 </html>
