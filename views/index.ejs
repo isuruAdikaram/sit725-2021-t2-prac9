@@ -1,0 +1,70 @@
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+
+  <!-- Materialize icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<div class="container" id="centre">     
+        
+  <div class="row"></div>
+  <!-- <div class="row center" style="height:300px; width: auto;"> -->
+    <button class="waves-effect waves-light btn modal-trigger" href="#modal1"><i>
+    </i class="material-icons "></i>Add Images!</button>
+  </div>
+  
+  <!--click me button modal-->
+  <div class="row" id="card-section">
+    
+  </div><!-- id="card-section"-->
+<!-- modal structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <h4>Modal Header</h4>
+
+    <div class="row">
+      <!-- form goes here -->
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s6">
+            <input id="titlePet" name="title" type="text" class="validate">
+            <label for="title">Title</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="image" name ="image"type="text" class="validate">
+            <label for="image">Image</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="link" type="text" class="validate">
+            <label for="link">Link</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="description" name ="description" type="text" class="validate">
+            <label for="description">Description</label>
+          </div>
+        </div>
+        <div class="row center">
+          <a class="waves-effect waves-light btn" id="formSubmit">Submit</a>
+        </div>
+      </form>
+    </div>
+    <!--form ends here-->
+
+  </div>
+</div>
+<!-- modal structure -->
+
+
+
+  <script>  
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+
+  </script>
+ 
