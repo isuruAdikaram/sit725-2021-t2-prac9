@@ -64,10 +64,12 @@ const addcard = (items) => {
       '<img class="activator" src="' + item.image + '"></div>' +
       '<div class="card-content">' +
       '<span class="card-title activator grey-text text-darken-4">' + item.title + '<i class="material-icons right">more_vert</i></span>' +
+      '<p>'+ item.description +'</p>'+
+      '<br>'+
       '<p><a href="' + item.link + '">about</a></p>' +
       '</div>' +
       '<div class="card-reveal">' +
-      '<span class="card-title grey-text text-darken-4">Card Title' +
+      '<span class="card-title grey-text text-darken-4">Edit Card' +
       '<i class="material-icons right">close</i>' +
       '</span>' +
       '<form class="col s12">' +
