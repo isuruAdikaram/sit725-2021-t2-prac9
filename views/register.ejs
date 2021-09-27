@@ -12,23 +12,23 @@
                         <div class="form">
                             <form class="form-control" action="/users/register" method ="POST">
                                 <div class="input-field">
-                                    <input type="text" id="firstName" name = "firstName" value="<% typeof firstName != 'undefined' ? firstName: ''%>" kl_vkbd_parsed="true">
+                                    <input type="text" id="firstName" name = "firstName" value="<%= typeof firstName != 'undefined' ? firstName: ''%>" kl_vkbd_parsed="true">
                                     <label for="firstName">First Name</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" id="lastName" name ="lastName" value="<% typeof lastName != 'undefined' ? lastName: ''%>" kl_vkbd_parsed="true">
+                                    <input type="text" id="lastName" name ="lastName" value="<%= typeof lastName != 'undefined' ? lastName: ''%>" kl_vkbd_parsed="true">
                                     <label for="lastName">Last Name</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="email" id="email" name ="email"value="<% typeof email != 'undefined' ? email: ''%>" kl_vkbd_parsed="true">
+                                    <input type="email" id="email" name ="email"value="<%= typeof email != 'undefined' ? email: ''%>" kl_vkbd_parsed="true">
                                     <label for="email">Email</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" id="password" name ="password" class="password" value="<% typeof password != 'undefined' ? password: ''%>" kl_vkbd_parsed="true">
+                                    <input type="text" id="password" name ="password" class="password" value="<%= typeof password != 'undefined' ? password: ''%>" kl_vkbd_parsed="true">
                                     <label for="password">password</label>
                                 </div>
                                 <div class="input-field">
-                                    <input type="text" id="password2" name ="password2"  class="password" value="<% typeof password2 != 'undefined' ? password2: ''%>" kl_vkbd_parsed="true">
+                                    <input type="text" id="password2" name ="password2"  class="password" value="<%= typeof password2 != 'undefined' ? password2: ''%>" kl_vkbd_parsed="true">
                                     <label for="password2">Confirm password</label>
                                 </div>
                                 <div>
