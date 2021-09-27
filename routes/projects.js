@@ -10,7 +10,6 @@ const passport = require('passport')
 // Route for loading pet data 
 router.get('/', ensureAuthenticated, (req, res) => {
   Controllers.projectController.getProjects(req,res)
-
 })
 // Create pet route
 router.post('/', ensureAuthenticated, (req, res) => {
