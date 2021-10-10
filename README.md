@@ -3,6 +3,7 @@ Created by Sodi Adikaram:
 This is a simple app for uploading photo links with some description attached to them.
 
 This app has features such as:
+Register user functionality
 Login functionality
 Edit user info
 Logout
