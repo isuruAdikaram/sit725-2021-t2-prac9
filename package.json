@@ -24,9 +24,9 @@
     "request": "^2.88.2",
     "socket.io": "^2.3.0"
   },
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "nodemon app.js",
     "test": "mocha --reporter spec"
   },
   "repository": {
