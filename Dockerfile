@@ -1,11 +1,11 @@
-FROM node:12
+FROM node:10-alpine
 
-WORKDIR /app
+WORKDIR /sit725-2021-t2-prac9
 
 COPY . .
 
-EXPOSE  3000
-
 RUN npm install
+
+EXPOSE  3000
 
 CMD ["npm", "start"]
